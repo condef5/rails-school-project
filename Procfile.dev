@@ -1,0 +1,2 @@
+web: bin/rails server --port=5000
+css: bin/rails tailwindcss:watch
