@@ -86,3 +86,9 @@ books_data = [
 ]
 
 Book.create!(books_data)
+
+User.create(
+  email: "admin@gmail.com",
+  password: "lucas123",
+  password_confirmation: "lucas123",
+)
