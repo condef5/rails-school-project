@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @books = Book.all.includes(:author, :category, :editorial).take(8)
+    @books = Book.search(params).includes(:author, :category, :editorial)
   end
 end
