@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Motor::Admin => '/admin'
   devise_for :users
   resources :books
   root 'books#index'
