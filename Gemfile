@@ -71,3 +71,5 @@ gem "tailwindcss-rails", "~> 2.3"
 gem "devise", "~> 4.9"
 
 gem "motor-admin", "~> 0.4.26"
+
+gem "rails-i18n", "~> 7.0"
