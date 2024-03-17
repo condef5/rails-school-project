@@ -1,7 +1,15 @@
 ---
 engine_version: 0.4.26
-file_version: 2024-03-17 15:49:22.204422000 -05:00
+file_version: 2024-03-17 17:24:59.164019000 -05:00
 resources:
+  - name: book
+    preferences:
+      columns:
+        - format:
+            currency: PEN
+            currency_base: units
+          name: price
+    updated_at: 2024-03-17 17:24:59.164019000 +00:00
   - name: user
     preferences:
       columns:
@@ -14,8 +22,10 @@ resources:
     updated_at: 2024-03-17 15:47:21.763506000 +00:00
 configs:
   - key: header.links
-    value: []
-    updated_at: 2024-03-17 15:19:22.204422000 +00:00
+    value:
+      - name: "⭐ Star on GitHub"
+        path: https://github.com/motor-admin/motor-admin-rails
+    updated_at: 2024-03-17 17:20:32.061929000 +00:00
 queries: []
 dashboards: []
 forms: []
@@ -26,4 +36,4 @@ api_configs:
     url: "/"
     preferences: {}
     description:
-    updated_at: 2024-03-17 02:44:24.675578000 +00:00
+    updated_at: 2024-03-17 17:20:32.087128000 +00:00

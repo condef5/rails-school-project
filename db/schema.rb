@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_17_055726) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_17_171506) do
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -20,11 +20,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_17_055726) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "author"
     t.string "image"
     t.date "publication_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "price"
+    t.integer "stock"
+    t.integer "author_id"
+    t.integer "editorial_id"
+    t.integer "category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -246,6 +250,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_17_055726) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "categories"
+  add_foreign_key "books", "editorials"
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
   add_foreign_key "motor_alerts", "motor_queries", column: "query_id"
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"
