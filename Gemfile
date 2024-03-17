@@ -73,3 +73,6 @@ gem "devise", "~> 4.9"
 gem "motor-admin", "~> 0.4.26"
 
 gem "rails-i18n", "~> 7.0"
+
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
