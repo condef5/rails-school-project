@@ -50,7 +50,6 @@ authors_list = [
     "Mario Vargas Llosa",
     "José Lezama Lima",
     "Juan Rulfo",
-    "Carlos Fuentes",
     "Alejo Carpentier",
     "Miguel Ángel Asturias",
     "Elena Garro",
@@ -61,7 +60,7 @@ authors_list = [
     "Salvador Garmendia"
 ]
 
-authors_list.each do |author_name|
+authors_list.uniq.each do |author_name|
   Author.create(name: author_name)
 end
 
