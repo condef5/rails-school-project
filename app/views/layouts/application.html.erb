@@ -9,40 +9,28 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="block">
+  <body class="block bg-[#f4f6f8]">
+    <%= render 'shared/navbar' %>
 
-    <div class="navbar-text bg-indigo-700 text-white py-4 text-center ">
-      <div class="container mx-auto flex justify-between px-5">
-        <% if user_signed_in? %>
-          <div>Logged in as <strong><%= current_user.email %></strong>.</div>
-          <div>
-            <%= link_to "Edit profile", edit_user_registration_path, class: "text-white" %> |
-            <%= link_to "Logout", destroy_user_session_path, class: "text-white", data: { turbo_method: :delete } %>
-          </div>
-        <% else %>
-          <div>BookTingo</div>
-          <div>
-            <%= link_to "Sign up", new_user_registration_path, class: "text-white"  %> |
-            <%= link_to "Login", new_user_session_path, class: "text-white"  %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/flash' %>
 
     <main class="container mx-auto mt-2 px-5">
-      <% if notice %>
-        <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="notice"><%= alert %></p>
-      <% end %>
-
       <%= yield %>
     </main>
+
+    <%= render 'carts/cart', cart: @cart %>
   </body>
 </html>
+
+<script>
+  function toggleSlideover() {
+    document.getElementById("slideover-container").classList.toggle("invisible");
+    document.getElementById("slideover-bg").classList.toggle("opacity-0");
+    document.getElementById("slideover-bg").classList.toggle("opacity-50");
+    document.getElementById("slideover").classList.toggle("translate-x-full");
+  }
+</script>

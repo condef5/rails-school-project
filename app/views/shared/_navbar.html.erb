@@ -1,0 +1,49 @@
+<div class="navbar-text bg-indigo-700 text-white py-4 text-center ">
+  <div class="container mx-auto flex items-center justify-between px-5">
+    <div class='font-bold'>
+      <%= link_to "TingoLibrary", root_path %>
+    </div>
+
+    <div class="flex items-center">
+      <% if user_signed_in? %>
+        <div>
+          <%= link_to "Editar perfil", edit_user_registration_path, class: "text-white" %> |
+          <%= link_to "Salir", destroy_user_session_path, class: "text-white", data: { turbo_method: :delete } %>
+        </div>
+      <% else  %>
+        <div>
+          <%= link_to "Registrase", new_user_registration_path, class: "text-white"  %> |
+          <%= link_to "Ingresar", new_user_session_path, class: "text-white"  %>
+        </div>
+      <% end %>
+
+      <button
+            class="flex items-center p-2 ml-6"
+            type="button"
+            onclick="toggleSlideover()"
+          >
+        <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 hover:text-gray-400 up axo brk"
+            >
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg>
+
+        <span class="ml-2 text-sm font-medium">
+          <%= render 'carts/count', cart: @cart %>
+        </span>
+      </button>
+
+    </div>
+  </div>
+</div>
