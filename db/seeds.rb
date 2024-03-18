@@ -3,13 +3,16 @@ User.destroy_all
 Category.destroy_all
 Author.destroy_all
 Editorial.destroy_all
+Cart.destroy_all
+Order.destroy_all
 
 # seed user
 
 User.create(
   email: "admin@gmail.com",
-  password: "lucas123",
-  password_confirmation: "lucas123",
+  password: "admin123",
+  password_confirmation: "admin123",
+  role: "admin",
 )
 
 # Seed categories

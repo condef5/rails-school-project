@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   before_action :initialize_cart
 
   def after_sign_in_path_for(resource)
-    if session[:cart_id].present?
+    if resource.is_a?(User) && resource.admin?
+      motor_admin_path
+    elsif session[:cart_id].present?
       carts_path
     else
       stored_location_for(resource) || root_path
