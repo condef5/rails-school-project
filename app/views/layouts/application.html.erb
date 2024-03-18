@@ -16,13 +16,13 @@
   <body class="block bg-[#f4f6f8]">
     <%= render 'shared/navbar' %>
 
-    <main class="container mx-auto mt-2 px-5">
-      <%= render 'shared/flash' %>
+    <%= render 'shared/flash' %>
 
+    <main class="container mx-auto mt-2 px-5">
       <%= yield %>
     </main>
 
-    <%= render 'cart/cart', cart: @cart %>
+    <%= render 'carts/cart', cart: @cart %>
   </body>
 </html>
 

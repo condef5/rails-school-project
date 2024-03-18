@@ -1,8 +1,10 @@
 <%= turbo_frame_tag "flash" do %>
-  <% if notice %>
-    <p class="w-full mt-6 py-2 px-3 bg-green-50 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="w-full mt-6 py-2 px-3 bg-red-50 text-red-500 font-medium rounded-lg inline-block" id="notice"><%= alert %></p>
-  <% end %>
+  <div class="container mx-auto mt-2 mb-4 px-5">
+    <% if notice %>
+      <p class="w-full mt-6 py-2 px-3 bg-green-50 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="w-full mt-6 py-2 px-3 bg-red-50 text-red-500 font-medium rounded-lg inline-block" id="notice"><%= alert %></p>
+    <% end %>
+  </div>
 <% end %>

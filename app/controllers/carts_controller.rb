@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+  def show
+  end
+
   def create
     @book = Book.find_by(id: params[:book_id])
     quantity = params[:quantity].to_i
@@ -16,9 +19,9 @@ class CartsController < ApplicationController
 
     render turbo_stream: [
       turbo_stream.replace(:flash, partial: "shared/flash"),
-      turbo_stream.replace(:cart, partial: "cart/orderable", locals: { cart: @cart }),
-      turbo_stream.replace(:total_cart, partial: "cart/total", locals: { cart: @cart }),
-      turbo_stream.replace(:cart_count, partial: "cart/count", locals: { cart: @cart }),
+      turbo_stream.replace(:cart, partial: "carts/orderable", locals: { cart: @cart }),
+      turbo_stream.replace(:total_cart, partial: "carts/total", locals: { cart: @cart }),
+      turbo_stream.replace(:cart_count, partial: "carts/count", locals: { cart: @cart }),
     ]
   end
 
@@ -29,9 +32,9 @@ class CartsController < ApplicationController
 
     render turbo_stream: [
       turbo_stream.replace(:flash, partial: "shared/flash"),
-      turbo_stream.replace(:cart, partial: "cart/orderable", locals: { cart: @cart }),
-      turbo_stream.replace(:total_cart, partial: "cart/total", locals: { cart: @cart }),
-      turbo_stream.replace(:cart_count, partial: "cart/count", locals: { cart: @cart }),
+      turbo_stream.replace(:cart, partial: "carts/orderable", locals: { cart: @cart }),
+      turbo_stream.replace(:total_cart, partial: "carts/total", locals: { cart: @cart }),
+      turbo_stream.replace(:cart_count, partial: "carts/count", locals: { cart: @cart }),
     ]
   end
 end

@@ -19,7 +19,7 @@
 
         <div class="mt-8">
           <div class="flow-root">
-            <%= render 'cart/orderable', cart: @cart %>
+            <%= render 'carts/orderable', cart: @cart %>
           </div>
         </div>
       </div>
@@ -28,12 +28,12 @@
         <div class="flex justify-between text-base font-medium text-gray-900">
           <p>Subtotal</p>
           <p class="flex gap-1">
-            <span>S/.</span> <%= render 'cart/total', cart: cart %>
+            <span>S/.</span> <%= render 'carts/total', cart: cart %>
           </p>
         </div>
         <p class="mt-0.5 text-sm text-gray-500">Envío e impuestos calculados al finalizar la compra.</p>
         <div class="mt-6">
-          <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
+          <%= link_to "Comprar", root_path, class: "flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700" %>
         </div>
       </div>
     </div>
