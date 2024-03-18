@@ -51,6 +51,9 @@ es:
       editorial:
         one: Editorial
         other: Editoriales
+      order:
+        one: Pedido
+        other: Pedidos
     attributes:
       author:
         name: "Nombre"
@@ -64,6 +67,19 @@ es:
         name: "Nombre"
         created_at: "Creado en"
         updated_at: "Actualizado en"
+      order:
+        name: "Nombre"
+        user: "Usuario"
+        created_at: "Creado en"
+        updated_at: "Actualizado en"
+      order_detail:
+        name: "Detalles de orden"
+        order: "Pedido"
+        book: "Libro"
+        quantity: "Cantidad"
+        price: "Precio"
+        created_at: "Creado en"
+        updated_at: "Actualizado en"
       book:
         title: "Titulo"
         description: "Descripcción"
@@ -73,6 +89,8 @@ es:
         created_at: "Creado en"
         updated_at: "Actualizado en"
       user:
+        provider: "Proveedor"
+        role: "Rol"
         confirmation_sent_at: Confirmación enviada a
         confirmation_token: Código de confirmación
         confirmed_at: Confirmado en
