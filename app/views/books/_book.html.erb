@@ -15,7 +15,7 @@
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
-    class="text-gray-500 w-6 h-6"
+    class="text-gray-500 w-4 h-4"
   >
       <path
       fill-rule="evenodd"
@@ -27,6 +27,8 @@
       <%= book.publication_year %>
     </span>
   </div>
+
+  <p class="mt-4">S/.<%= book.price %></p>
 
   <div>
     <%= form_with(url: carts_path, method: :post, data: { turbo_frame: "cart" }) do |f| %>
