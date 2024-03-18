@@ -1,6 +1,6 @@
 ---
 engine_version: 0.4.26
-file_version: 2024-03-17 17:24:59.164019000 -05:00
+file_version: 2024-03-18 09:35:04.676697000 -05:00
 resources:
   - name: book
     preferences:
@@ -9,7 +9,28 @@ resources:
             currency: PEN
             currency_base: units
           name: price
-    updated_at: 2024-03-17 17:24:59.164019000 +00:00
+      scopes:
+        - visible: false
+          name: filter_by_author
+        - visible: false
+          name: filter_by_category
+        - visible: false
+          name: filter_by_editorial
+        - visible: false
+          name: search
+    updated_at: 2024-03-18 09:34:16.312296000 +00:00
+  - name: cart
+    preferences:
+      visible: false
+    updated_at: 2024-03-18 09:33:12.408603000 +00:00
+  - name: order_detail
+    preferences:
+      visible: false
+    updated_at: 2024-03-18 09:33:18.715591000 +00:00
+  - name: orderable
+    preferences:
+      visible: false
+    updated_at: 2024-03-18 09:33:19.615096000 +00:00
   - name: user
     preferences:
       columns:
@@ -23,9 +44,11 @@ resources:
 configs:
   - key: header.links
     value:
-      - name: "⭐ Star on GitHub"
-        path: https://github.com/motor-admin/motor-admin-rails
-    updated_at: 2024-03-17 17:20:32.061929000 +00:00
+      - name: Reportes
+        link_type: reports
+      - name: Formularios
+        link_type: forms
+    updated_at: 2024-03-18 09:35:04.676697000 +00:00
 queries: []
 dashboards: []
 forms: []
