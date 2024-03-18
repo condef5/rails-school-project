@@ -6,7 +6,7 @@ class Cart < ApplicationRecord
     orderables.to_a.sum { |orderable| orderable.total }
   end
 
-  def delta
-    puts "Cart delta"
+  def count
+    orderables.to_a.sum { |orderable| orderable.quantity }
   end
 end
